@@ -1,0 +1,32 @@
+{
+	"name": "orm_playground",
+	"version": "1.0.0",
+	"description": "Node ORM playground",
+	"keywords": [
+		"node",
+		"orm"
+	],
+	"homepage": "https://github.com/Nunes-ND/orm-playground#readme",
+	"bugs": {
+		"url": "https://github.com/Nunes-ND/orm-playground/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Nunes-ND/orm-playground.git"
+	},
+	"license": "ISC",
+	"author": "Gilson Nunes",
+	"type": "commonjs",
+	"main": "dist/main.js",
+	"scripts": {
+		"build": "tsc -p tsconfig.prod.json",
+		"prepare": "husky"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.2.2",
+		"@types/node": "^24.3.0",
+		"husky": "^9.1.7",
+		"tsx": "^4.20.5",
+		"typescript": "^5.9.2"
+	}
+}
