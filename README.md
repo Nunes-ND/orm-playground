@@ -1,6 +1,6 @@
 # ORM Playground
 
-This project is a "playground" or Proof of Concept (PoC) developed to explore the setup and usage of different Object-Relational Mappers (ORMs) in the Node.js ecosystem. The initial exploration focuses on [TypeORM](https://typeorm.io/) and [Prisma](https://www.prisma.io/).
+This project is a "playground" or Proof of Concept (PoC) developed to explore the setup and usage of different Object-Relational Mappers (ORMs) in the Node.js ecosystem. The initial exploration focuses on [TypeORM](https://typeorm.io/), [Prisma](https://www.prisma.io/), and [Drizzle ORM](https://orm.drizzle.team/).
 
 The goal is to create a simple and functional testing environment to understand workflows, from the initial setup and database connection to entity creation and migration management.
 
@@ -10,6 +10,7 @@ The goal is to create a simple and functional testing environment to understand 
 -   TypeScript
 -   TypeORM
 -   Prisma
+-   Drizzle ORM
 -   tsx (for running TypeScript in real-time during development)
 -   better-sqlite3 (SQLite database driver)
 -   Biome (for formatting and linting)
@@ -82,3 +83,19 @@ In addition to TypeORM, this project is also configured to explore Prisma. The f
 -   `npm run prisma:migrate -- <migration_name>`
     -   **Function:** Creates a new SQL migration file based on the changes in your Prisma schema, applies it to the database, and regenerates the Prisma Client. This is the primary command for evolving the database schema in development.
     -   **Example:** `npm run prisma:migrate -- add_post_model`
+
+## Drizzle Scripts
+
+The project is also configured to use Drizzle ORM. The following scripts, powered by `drizzle-kit`, help manage the database schema.
+
+-   `npm run drizzle:generate`
+    -   **Function:** Compares your Drizzle schema definitions with a database snapshot and generates SQL migration files containing the necessary changes. This is the standard way to create migrations.
+
+-   `npm run drizzle:migrate`
+    -   **Function:** Applies all pending migration files to the database, updating its schema to the latest version.
+
+-   `npm run drizzle:push`
+    -   **Function:** A development-focused command that directly synchronizes the database schema with your Drizzle schema definitions, bypassing the creation of migration files. Useful for quick prototyping.
+
+-   `npm run drizzle:pull`
+    -   **Function:** Introspects an existing database and generates Drizzle schema files based on its structure. This is ideal for bringing an existing database under Drizzle's management.
