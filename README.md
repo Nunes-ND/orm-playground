@@ -1,6 +1,6 @@
 # ORM Playground
 
-This project is a "playground" or Proof of Concept (PoC) developed to explore the setup and usage of different Object-Relational Mappers (ORMs) in the Node.js ecosystem. The initial exploration focuses on [TypeORM](https://typeorm.io/).
+This project is a "playground" or Proof of Concept (PoC) developed to explore the setup and usage of different Object-Relational Mappers (ORMs) in the Node.js ecosystem. The initial exploration focuses on [TypeORM](https://typeorm.io/) and [Prisma](https://www.prisma.io/).
 
 The goal is to create a simple and functional testing environment to understand workflows, from the initial setup and database connection to entity creation and migration management.
 
@@ -9,6 +9,7 @@ The goal is to create a simple and functional testing environment to understand 
 -   Node.js
 -   TypeScript
 -   TypeORM
+-   Prisma
 -   tsx (for running TypeScript in real-time during development)
 -   better-sqlite3 (SQLite database driver)
 -   Biome (for formatting and linting)
@@ -67,3 +68,17 @@ These commands generate base files for entities, migrations, and subscribers. **
     -   **Function:** Clears all data from the query result cache (if the cache is enabled).
 -   `npm run typeorm:init`
     -   **Function:** Scaffolds a new TypeORM project, creating the basic directory structure and configuration files. Useful for starting from scratch.
+
+## Prisma Scripts
+
+In addition to TypeORM, this project is also configured to explore Prisma. The following scripts are available for interacting with the Prisma CLI.
+
+-   `npm run prisma:db:pull`
+    -   **Function:** Introspects the database schema (defined in `prisma/schema.prisma`) and updates the Prisma schema file to match it. This is useful for generating Prisma models from an existing database.
+
+-   `npm run prisma:generate`
+    -   **Function:** Generates or updates the Prisma Client (`@prisma/client`) based on the models in your `schema.prisma` file. This should be run every time you change your Prisma schema.
+
+-   `npm run prisma:migrate -- <migration_name>`
+    -   **Function:** Creates a new SQL migration file based on the changes in your Prisma schema, applies it to the database, and regenerates the Prisma Client. This is the primary command for evolving the database schema in development.
+    -   **Example:** `npm run prisma:migrate -- add_post_model`
