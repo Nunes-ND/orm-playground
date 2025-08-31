@@ -36,11 +36,17 @@
 		"prisma:db:pull": "npx prisma db pull",
 		"prisma:generate": "npx prisma generate",
 		"prisma:migrate": "npx prisma migrate dev --name",
+		"drizzle:push": "npx drizzle-kit push --config ./drizzle.config.ts",
+		"drizzle:pull": "npx drizzle-kit pull --config ./drizzle.config.ts",
+		"drizzle:generate": "npx drizzle-kit generate --config ./drizzle.config.ts",
+		"drizzle:migrate": "npx drizzle-kit migrate --config ./drizzle.config.ts",
 		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.2",
+		"@types/better-sqlite3": "^7.6.13",
 		"@types/node": "^24.3.0",
+		"drizzle-kit": "^0.31.4",
 		"husky": "^9.1.7",
 		"prisma": "^6.15.0",
 		"tsx": "^4.20.5",
@@ -49,6 +55,7 @@
 	"dependencies": {
 		"@prisma/client": "^6.15.0",
 		"better-sqlite3": "^12.2.0",
+		"drizzle-orm": "^0.44.5",
 		"reflect-metadata": "^0.2.2",
 		"typeorm": "^0.3.26"
 	}
