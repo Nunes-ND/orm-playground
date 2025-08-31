@@ -20,6 +20,19 @@
 	"main": "dist/main.js",
 	"scripts": {
 		"build": "tsc -p tsconfig.prod.json",
+		"typeorm:schema:sync": "npx tsx node_modules/typeorm/cli.js schema:sync -d ./src/typeorm/data-source.ts",
+		"typeorm:schema:log": "npx tsx node_modules/typeorm/cli.js schema:log -d ./src/typeorm/data-source.ts",
+		"typeorm:schema:drop": "npx tsx node_modules/typeorm/cli.js schema:drop -d ./src/typeorm/data-source.ts",
+		"typeorm:query": "npx tsx node_modules/typeorm/cli.js query -d ./src/typeorm/data-source.ts",
+		"typeorm:entity:create": "npx tsx node_modules/typeorm/cli.js entity:create",
+		"typeorm:subscriber:create": "npx tsx node_modules/typeorm/cli.js subscriber:create",
+		"typeorm:migration:create": "npx tsx node_modules/typeorm/cli.js migration:create --esm",
+		"typeorm:migration:generate": "npx tsx node_modules/typeorm/cli.js migration:generate -d ./src/typeorm/data-source.ts -p --esm",
+		"typeorm:migration:run": "npx tsx node_modules/typeorm/cli.js migration:run -d ./src/typeorm/data-source.ts",
+		"typeorm:migration:show": "npx tsx node_modules/typeorm/cli.js migration:show -d ./src/typeorm/data-source.ts",
+		"typeorm:migration:revert": "npx tsx node_modules/typeorm/cli.js migration:revert -d ./src/typeorm/data-source.ts",
+		"typeorm:cache:clear": "npx tsx node_modules/typeorm/cli.js cache:clear -d ./src/typeorm/data-source.ts",
+		"typeorm:init": "npx tsx node_modules/typeorm/cli.js init -d ./src/typeorm/data-source.ts",
 		"prepare": "husky"
 	},
 	"devDependencies": {
@@ -28,5 +41,10 @@
 		"husky": "^9.1.7",
 		"tsx": "^4.20.5",
 		"typescript": "^5.9.2"
+	},
+	"dependencies": {
+		"better-sqlite3": "^12.2.0",
+		"reflect-metadata": "^0.2.2",
+		"typeorm": "^0.3.26"
 	}
 }

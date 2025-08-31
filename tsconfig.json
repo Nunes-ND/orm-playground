@@ -6,13 +6,16 @@
 		"moduleResolution": "nodenext",
 		"lib": ["es2024"],
 		"strict": true,
+		"strictPropertyInitialization": false,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"sourceMap": true,
 		"incremental": true,
 		"noEmit": true,
-		"baseUrl": "."
+		"baseUrl": ".",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules", "dist"]
