@@ -22,3 +22,7 @@ Thumbs.db
 *.sqlite
 *.sqlite-wal
 *.sqlite-shm
+
+# Prisma files
+/prisma/dev.db
+/generated/prisma

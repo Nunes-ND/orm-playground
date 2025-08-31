@@ -33,16 +33,21 @@
 		"typeorm:migration:revert": "npx tsx node_modules/typeorm/cli.js migration:revert -d ./src/typeorm/data-source.ts",
 		"typeorm:cache:clear": "npx tsx node_modules/typeorm/cli.js cache:clear -d ./src/typeorm/data-source.ts",
 		"typeorm:init": "npx tsx node_modules/typeorm/cli.js init -d ./src/typeorm/data-source.ts",
+		"prisma:db:pull": "npx prisma db pull",
+		"prisma:generate": "npx prisma generate",
+		"prisma:migrate": "npx prisma migrate dev --name",
 		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.2.2",
 		"@types/node": "^24.3.0",
 		"husky": "^9.1.7",
+		"prisma": "^6.15.0",
 		"tsx": "^4.20.5",
 		"typescript": "^5.9.2"
 	},
 	"dependencies": {
+		"@prisma/client": "^6.15.0",
 		"better-sqlite3": "^12.2.0",
 		"reflect-metadata": "^0.2.2",
 		"typeorm": "^0.3.26"
