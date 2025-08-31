@@ -5,18 +5,18 @@ export class CreateUser1756586503125 implements MigrationInterface {
 
 	public async up(queryRunner: QueryRunner): Promise<void> {
 		await queryRunner.query(`
-            CREATE TABLE "users" (
-                "id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                "firstName" text NOT NULL,
-                "lastName" text NOT NULL,
-                "age" integer NOT NULL
-            )
-        `);
+			CREATE TABLE "users" (
+					"id" integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+					"firstName" text NOT NULL,
+					"lastName" text NOT NULL,
+					"age" integer NOT NULL
+			)
+		`);
 	}
 
 	public async down(queryRunner: QueryRunner): Promise<void> {
 		await queryRunner.query(`
-            DROP TABLE "user"
-        `);
+			DROP TABLE "user"
+		`);
 	}
 }
